@@ -5,7 +5,7 @@
  *  @return Array $errors if domain is fraudelent
  * */
 function hook_domain_blocker($vars) {
-    require_once dirname(dirname(dirname(__FILE__))).'/modules/addons/domain_blocker/DomainBlocker.php';
+    require_once dirname(__FILE__).'/DomainBlocker.php';
 
     $blocker = DomainBlocker::getInstance();
 
