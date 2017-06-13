@@ -11,7 +11,11 @@ function hook_domain_blocker($vars) {
 
     $errors = $blocker::checkDomain($vars);
 
-    return $errors;
+    if($errors['status'] == 0) {
+	return [];
+    } else {
+	return $errors['msg'];
+    }
 }
 
 add_hook('ShoppingCartValidateDomain', '2', 'hook_domain_blocker');
